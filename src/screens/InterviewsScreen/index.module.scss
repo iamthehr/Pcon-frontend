@@ -1,0 +1,212 @@
+@import "../../styles/theme";
+
+.interviews-screen {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .screen-title {
+        color: $primary;
+    }
+
+
+
+    .search-card {
+        width: 30rem;
+        max-width: 90vw;
+
+        padding: 5px 10px;
+
+        .search-form {
+            margin: 0;
+
+            .search-input {
+                transition: 0.2s ease;
+
+                &.fixed {
+                    width: 30rem;
+                    max-width: 95vw;
+                    padding: 1rem;
+                    top: 4rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: fixed;
+                    z-index: 4;
+                    background-color: white;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+                }
+
+            }
+
+            .toggle-input {
+                margin: 10px 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                label {
+                    color: $primary;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .add-btn {
+        text-decoration: none;
+        position: fixed;
+        top: 4.5rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        padding: 0;
+        transition: 0.15s ease-in-out;
+        overflow: hidden;
+        background-color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            box-shadow: 0px 0px 24px 2px $primary;
+        }
+
+        .icon {
+            color: #fff;
+            width: 60%;
+            height: 60%;
+        }
+    }
+
+    .grid {
+        margin-top: 2rem;
+        width: 95%;
+        gap: 25px;
+        
+
+        .interview-card {
+            height: 22rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.15s ease-in-out;
+            position: relative;
+
+            &:hover {
+                box-shadow: 0px 0px 24px 2px $primary;
+            }
+
+
+
+            .verified-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 2rem;
+                height: 2rem;
+                color: #1aa260;
+            }
+
+            .unverified-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 2rem;
+                height: 2rem;
+                color: red;
+            }
+
+            .header {
+                width: 100%;
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                h2 {
+                    max-width: 100%;
+                    color: $primary;
+                    margin: 0;
+                    font-size: 1.5rem;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                span {
+                    color: $accent;
+                    font-size: 0.9rem;
+
+                }
+
+                .type {
+                    color: $primary;
+                }
+            }
+
+            .content {
+                width: 100%;
+                height: 60%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .name,
+                .regNum,
+                .branch {
+                    color: $primary;
+                    font-size: 1.2rem;
+                }
+
+                .email {
+                    color: $accent;
+                    font-size: 1rem;
+                }
+            }
+
+            .footer {
+                width: 100%;
+                height: 15%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                button,
+                a {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .interviews-screen {
+        min-height: calc(100vh - 8rem);
+
+        .add-btn {
+            position: fixed;
+            top: auto;
+            bottom: 5rem;
+            right: 1rem;
+            width: 4rem;
+            height: 4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+        }
+
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            margin-top: 0;
+            margin-bottom: 7rem;
+        }
+    }
+}

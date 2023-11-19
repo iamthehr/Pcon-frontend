@@ -1,0 +1,129 @@
+@import '../styles/theme';
+
+.navigation {
+    justify-content: space-between;
+    margin: 0;
+
+    .left-section {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .menu-btn {
+            color: #fff;
+            height: 2.4rem;
+            width: 2.4rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .title {
+            color: #fff;
+            margin: 0 2rem;
+
+            &:hover {
+                a {
+                    color: $primary;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .active {
+                color: $primary;
+            }
+        }
+
+    }
+
+    .right-section {
+        display: flex;
+        align-items: center;
+
+        a.action-btn {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            background-color: #636466;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.5rem;
+
+            p {
+                display: none;
+
+            }
+
+            &.active {
+                .notification-btn {
+                    color: $primary;
+                }
+            }
+
+            .notification-btn {
+                color: #fff;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .header-nav {
+        display: block;
+    }
+
+
+}
+
+.drawer-nav {
+    height: 70%;
+}
+
+@media (max-width: 800px) {
+    .navigation {
+        .left-section {
+            .title {
+                margin: 0 1rem;
+            }
+        }
+
+        .header-nav {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .navigation {
+        .right-section {
+            .btn {
+                font-size: 0.75rem;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .navigation {
+        .right-section {
+            a.action-btn:hover {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+}

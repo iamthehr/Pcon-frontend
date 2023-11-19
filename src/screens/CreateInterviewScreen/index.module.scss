@@ -1,0 +1,41 @@
+@import "../../styles/theme";
+
+.create-interview-screen {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    .title {
+        color: $primary;
+    }
+
+    .verification-card {
+        margin-top: 2rem;
+        max-width: 90vw;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        h2 {
+            color: red;
+            margin: 10px 0;
+        }
+
+        h4 {
+            color: $primary;
+            margin: 0 5px 0 20px;
+        }
+    }
+
+    .form-card {
+        width: 40rem;
+        max-width: 90vw;
+
+    }
+
+}
